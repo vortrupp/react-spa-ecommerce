@@ -1,0 +1,73 @@
+{
+  "list": [
+    {
+      "id": "product1",
+      "image_url": "https://cdn.pixabay.com/photo/2017/04/16/01/53/girl-2233820_960_720.jpg",
+      "imgs": [
+          "https://cdn.pixabay.com/photo/2017/04/16/01/53/girl-2233820_960_720.jpg",
+          "https://cdn.pixabay.com/photo/2017/04/16/01/53/girl-2233820_960_720.jpg",
+          "https://cdn.pixabay.com/photo/2017/04/16/01/53/girl-2233820_960_720.jpg"
+      ],
+      "title": "商品1",
+      "category": ["tops"],
+      "tags": ["hot", "new_arrival"],
+      "origial_price": {
+        "NTD": 199.00,
+        "USD": 7.00
+      },
+      "discount_price": null,
+      "stock": {
+        "S": 0,
+        "M": 1,
+        "L": 1,
+        "XL": 0
+      }
+    },
+    {
+      "id": "product2",
+      "image_url": "https://cdn.pixabay.com/photo/2016/08/26/20/44/elan-1623086__340.jpg",
+      "imgs": [
+        "https://cdn.pixabay.com/photo/2016/08/26/20/44/elan-1623086__340.jpg",
+        "https://cdn.pixabay.com/photo/2016/08/26/20/44/elan-1623086__340.jpg",
+        "https://cdn.pixabay.com/photo/2016/08/26/20/44/elan-1623086__340.jpg"
+      ],
+      "title": "商品2",
+      "category": ["tops"],
+      "tags": ["hot", "new_arrival"],
+      "origial_price": {
+        "NTD": 199.00,
+        "USD": 7.00
+      },
+      "discount_price": null,
+      "stock": {
+        "S": 1,
+        "M": 1,
+        "L": 1,
+        "XL": 0
+      }
+    },
+    {
+      "id": "product3",
+      "image_url": "https://cdn.pixabay.com/photo/2016/03/03/17/34/jeans-1234687__340.jpg",
+      "imgs": [
+        "https://cdn.pixabay.com/photo/2016/03/03/17/34/jeans-1234687__340.jpg",
+        "https://cdn.pixabay.com/photo/2016/03/03/17/34/jeans-1234687__340.jpg",
+        "https://cdn.pixabay.com/photo/2016/03/03/17/34/jeans-1234687__340.jpg"
+      ],
+      "title": "商品3",
+      "category": ["pants", "jeans"],
+      "tags": ["hot", "new_arrival"],
+      "origial_price": {
+        "NTD": 199.00,
+        "USD": 7.00
+      },
+      "discount_price": null,
+      "stock": {
+        "S": 0,
+        "M": 0,
+        "L": 0,
+        "XL": 0
+      }
+    }
+  ]
+}

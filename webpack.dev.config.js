@@ -63,6 +63,7 @@ module.exports = {
       components: path.resolve(__dirname, 'src/components'),
       pages: path.resolve(__dirname, 'src/pages'),
       assets: path.resolve(__dirname, 'src/assets'),
+      services: path.resolve(__dirname, 'src/services'),
     }
   },
   devServer: {

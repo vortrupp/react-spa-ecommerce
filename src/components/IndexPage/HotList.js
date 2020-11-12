@@ -1,27 +1,79 @@
-import Container from 'react-bootstrap/Container';
+import { useState, useEffect } from 'react';
 import styled from 'styled-components';
 
+import { getHotList } from 'services/products';
+import { CardColumns, Container, Card, Badge, Button } from 'react-bootstrap';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
+const CardImg = styled(Card.Img)`
+  height: 200px;
+  object-fit: cover;
+`;
+
+const CardTag = styled(Badge)`
+  &.badge-light {
+    opacity: .4;
+  }
+`;
+
+const CardHot = styled(Card.Text)`
+  position: absolute;
+  top: 0;
+  left: 0;
+`;
+
 const HotList = () => {
-  const images = [
-    {
-      id: 'img1',
-      url: 'https://cdn.pixabay.com/photo/2015/03/26/09/41/tie-690084_960_720.jpg',
-      text: '全館滿1000免運'
-    },
-    {
-      id: 'img2',
-      url: 'https://cdn.pixabay.com/photo/2016/03/27/22/05/businessman-1284463_960_720.jpg',
-      text: '當週新品9折起'
-    },
-    {
-      id: 'img3',
-      url: 'https://cdn.pixabay.com/photo/2016/01/19/17/18/business-1149630_960_720.jpg',
-      text: '換季折扣6折起'
-    },
-  ];
+  const [hotList, setHotList] = useState([]);
+
+  useEffect(() => {
+    setHotList(getHotList());
+  }, []);
+
   return (
     <Container className="my-5">
-      <h2 className="text-center">熱門商品</h2>
+      <h2 className="mb-3">熱門商品</h2>
+      <CardColumns>
+        {
+          hotList.map(product => (
+            <Card key={product.id}>
+              <CardImg variant="top" src={product.image_url} />
+              <Card.Body>
+                <CardHot className="p-2">
+                  <FontAwesomeIcon
+                    size="2x"
+                    className="text-danger"
+                    icon={['fab', 'hotjar']}
+                  />
+                </CardHot>
+                <Card.Title>{product.title}</Card.Title>
+                <Card.Subtitle as="h3" className="mb-3 text-info">
+                  ${product.origial_price.NTD.toFixed(2)}
+                </Card.Subtitle>
+                <Card.Text className="mb-2 text-muted">
+                  {
+                    ['S', 'M', 'L', 'XL']
+                      .map(size => (
+                        <CardTag
+                          key={size}
+                          variant={product.stock[size] ? 'success' : 'light'}
+                          className="mr-2"
+                        >
+                          {size}
+                        </CardTag>
+                      ))
+                  }
+                </Card.Text>
+              </Card.Body>
+              <Card.Footer className="text-center">
+                <Button variant="info" className="m-1">加入購物車</Button>
+                <Button variant="secondary" href="/product" className="m-1">
+                  查看
+                </Button>
+              </Card.Footer>
+            </Card>
+          ))
+        }
+      </CardColumns>
     </Container>
   );
 }
